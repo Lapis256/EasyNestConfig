@@ -46,9 +46,14 @@ object TestHandler : IApplyHandler {
     }
 }
 
-
-
-
+object Config : AbstractNestConfig(ModConfig.Type.SERVER, "config") {
+    @NestConfig
+    @Test
+    object Test2 {
+        val test2 = builder.comment("This is a test config")
+            .define("test2", "This is a test")
+    }
+}
 
 fun main() {
     val helper = ConfigHelper(modContainer, "<Nullable FolderName>")
