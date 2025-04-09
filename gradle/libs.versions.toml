@@ -1,0 +1,19 @@
+[versions]
+plugin_kotlin = "2.1.0"
+plugin_moddev = "2.0.+"
+
+
+minecraft = "1.21.1"
+neoforge = "21.1.133"
+kotlinForForge = "5.7.0"
+parchmentmc = "2024.11.17"
+
+
+[libraries]
+kotlinForForge = { module = "thedarkcolour:kotlinforforge-neoforge", version.ref = "kotlinForForge" }
+
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "plugin_kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "plugin_kotlin" }
+moddev = { id = "net.neoforged.moddev", version.ref = "plugin_moddev" }
