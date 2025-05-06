@@ -14,7 +14,6 @@ plugins {
 
 val modId = Constants.Mod.id
 val mcVersion: String = libs.versions.minecraft.get()
-val kffVersion: String = libs.versions.kotlinForForge.get()
 val jdkVersion = 21
 
 val exportMixin = true
@@ -105,6 +104,7 @@ tasks {
 
     java {
         withSourcesJar()
+        withJavadocJar()
         toolchain {
             languageVersion = JavaLanguageVersion.of(jdkVersion)
         }
@@ -160,6 +160,17 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             from(components["java"])
+        }
+    }
+    repositories {
+        mavenLocal()
+        maven {
+            name = "R2"
+            url = uri("s3://maven")
+            credentials(AwsCredentials::class) {
+                accessKey = (project.findProperty("r2_access_key") ?: System.getenv("R2_ACCESS_KEY") ?: error("R2 access key is missing.")).toString()
+                secretKey = (project.findProperty("r2_secret_key") ?: System.getenv("R2_SECRET_KEY") ?: error("R2 secret key is missing.")).toString()
+            }
         }
     }
 }

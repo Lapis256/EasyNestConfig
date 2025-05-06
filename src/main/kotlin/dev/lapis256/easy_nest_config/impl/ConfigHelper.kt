@@ -1,9 +1,9 @@
-package io.github.lapis256.easy_nest_config.impl
+package dev.lapis256.easy_nest_config.impl
 
-import io.github.lapis256.easy_nest_config.EasyNestConfig
-import io.github.lapis256.easy_nest_config.api.IApplyHandler
-import io.github.lapis256.easy_nest_config.api.INestConfig
-import io.github.lapis256.easy_nest_config.api.NestConfig
+import dev.lapis256.easy_nest_config.EasyNestConfig
+import dev.lapis256.easy_nest_config.api.IApplyHandler
+import dev.lapis256.easy_nest_config.api.INestConfig
+import dev.lapis256.easy_nest_config.api.NestConfig
 import net.neoforged.fml.ModContainer
 import net.neoforged.neoforge.common.ModConfigSpec
 import kotlin.reflect.KClass

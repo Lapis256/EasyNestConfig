@@ -4,7 +4,7 @@ object Constants {
         const val name = "EasyNestConfig"
         const val license = "MIT"
         const val version = "4.0.0"
-        const val group = "io.github.lapis256"
+        const val group = "dev.lapis256"
         const val author = "Lapis256"
     }
 }

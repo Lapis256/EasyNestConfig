@@ -1,4 +1,4 @@
-package io.github.lapis256.easy_nest_config
+package dev.lapis256.easy_nest_config
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

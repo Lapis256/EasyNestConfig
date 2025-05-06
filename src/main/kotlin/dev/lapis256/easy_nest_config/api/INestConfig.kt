@@ -1,4 +1,4 @@
-package io.github.lapis256.easy_nest_config.api
+package dev.lapis256.easy_nest_config.api
 
 import net.neoforged.fml.config.ModConfig
 import net.neoforged.neoforge.common.ModConfigSpec

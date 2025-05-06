@@ -1,8 +1,8 @@
-package io.github.lapis256.easy_nest_config.impl
+package dev.lapis256.easy_nest_config.impl
 
-import io.github.lapis256.easy_nest_config.api.Comment
-import io.github.lapis256.easy_nest_config.api.IApplyHandler
-import io.github.lapis256.easy_nest_config.api.Translation
+import dev.lapis256.easy_nest_config.api.Comment
+import dev.lapis256.easy_nest_config.api.IApplyHandler
+import dev.lapis256.easy_nest_config.api.Translation
 import net.neoforged.neoforge.common.ModConfigSpec
 import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
