@@ -1,12 +1,12 @@
 package dev.lapis256.easy_nest_config.api
 
-import net.neoforged.fml.config.ModConfig
-import net.neoforged.neoforge.common.ModConfigSpec
+import net.minecraftforge.common.ForgeConfigSpec
+import net.minecraftforge.fml.config.ModConfig
 
 
 interface INestConfig {
     val type: ModConfig.Type
     val name: String
-    val builder: ModConfigSpec.Builder
-    val spec: ModConfigSpec
+    val builder: ForgeConfigSpec.Builder
+    val spec: ForgeConfigSpec
 }

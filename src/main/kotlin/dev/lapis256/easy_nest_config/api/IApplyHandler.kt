@@ -1,9 +1,9 @@
 package dev.lapis256.easy_nest_config.api
 
-import net.neoforged.neoforge.common.ModConfigSpec
+import net.minecraftforge.common.ForgeConfigSpec
 import kotlin.reflect.KClass
 
 
 interface IApplyHandler {
-    fun apply(clazz: KClass<*>, builder: ModConfigSpec.Builder)
+    fun apply(clazz: KClass<*>, builder: ForgeConfigSpec.Builder)
 }

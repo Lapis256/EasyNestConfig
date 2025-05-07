@@ -1,11 +1,11 @@
 package dev.lapis256.easy_nest_config.api
 
-import net.neoforged.fml.config.ModConfig
-import net.neoforged.neoforge.common.ModConfigSpec
+import net.minecraftforge.common.ForgeConfigSpec
+import net.minecraftforge.fml.config.ModConfig
 
 
 @Suppress("Unused")
 abstract class AbstractNestConfig(override val type: ModConfig.Type, override val name: String) : INestConfig {
-    override val builder: ModConfigSpec.Builder = ModConfigSpec.Builder()
-    override val spec by lazy { builder.build() }
+    override val builder: ForgeConfigSpec.Builder = ForgeConfigSpec.Builder()
+    override val spec: ForgeConfigSpec by lazy { builder.build() }
 }

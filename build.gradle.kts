@@ -14,7 +14,8 @@ plugins {
 
 val modId = Constants.Mod.id
 val mcVersion: String = libs.versions.minecraft.get()
-val jdkVersion = 21
+val forgeVersion: String = libs.versions.forge.get()
+val jdkVersion = 17
 
 val exportMixin = true
 
@@ -24,8 +25,8 @@ base {
     group = Constants.Mod.group
 }
 
-neoForge {
-    version = libs.versions.neoforge.get()
+legacyForge {
+    version = "$mcVersion-$forgeVersion"
 
     validateAccessTransformers = true
 
@@ -37,43 +38,6 @@ neoForge {
     parchment {
         mappingsVersion = libs.versions.parchmentmc.get()
         minecraftVersion = mcVersion
-    }
-
-    runs {
-        create("client") {
-            client()
-            gameDirectory.set(file("run"))
-            systemProperty("neoforge.enabledGameTestNamespaces", modId)
-            jvmArgument("-Dmixin.debug.export=$exportMixin")
-        }
-
-        create("server") {
-            server()
-            gameDirectory.set(file("run-server"))
-            programArgument("--nogui")
-            systemProperty("neoforge.enabledGameTestNamespaces", modId)
-            jvmArgument("-Dmixin.debug.export=$exportMixin")
-        }
-
-        create("data") {
-            data()
-            gameDirectory.set(file("run-data"))
-            programArguments.addAll(
-                "--mod",
-                modId,
-                "--all",
-                "--output",
-                file("src/generated/resources/").absolutePath,
-                "--existing",
-                file("src/main/resources/").absolutePath
-            )
-        }
-
-        configureEach {
-            systemProperty("forge.logging.markers", "REGISTRIES")
-
-            logLevel = org.slf4j.event.Level.DEBUG
-        }
     }
 
     mods {
